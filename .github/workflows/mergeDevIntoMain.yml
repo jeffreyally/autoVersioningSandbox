@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Merge with master
+    - name: Merge development into master
       run: |
         git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmp
         cd tmp
@@ -40,6 +40,25 @@ jobs:
         temp=$(grep -P -o -m 1 "\d.\d.*-SNAPSHOT" ./pom.xml | head -1)
         echo "$temp"
         find ./ -name "pom.xml" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp%-SNAPSHOT}"/}" {} \;
+        cat pom.xml
+        git add .  
+        git commit -m 'mergeDevIntoMain.yml GitHub Actions'
+        git push
+      
+    
+    - name: Merge master into development
+      run: |
+        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+        cd tmp
+        ls -l
+        git config user.name "Automerge Bot"
+        git config user.email "bot@example.com"
+        git config pull.rebase false
+        git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+        git branch -a
+        #temp=$(grep -P -o -m 1 "\d.\d.*-SNAPSHOT" ./pom.xml | head -1)
+        echo "$temp"
+        #find ./ -name "pom.xml" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp%-SNAPSHOT}"/}" {} \;
         cat pom.xml
         git add .  
         git commit -m 'mergeDevIntoMain.yml GitHub Actions'
