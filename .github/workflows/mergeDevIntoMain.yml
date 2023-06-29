@@ -39,7 +39,7 @@ jobs:
         git branch -a
         temp=$(grep -P -o -m 1 "\d.\d.*-SNAPSHOT" ./pom.xml | head -1)
         echo "$temp"
-        find ./ -name "pom*" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp%-SNAPSHOT}"/}" {} \;
+        find ./ -name "pom.xml" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp%-SNAPSHOT}"/}" {} \;
         cat pom.xml
         #git add -A .  
         #git commit -m 'mergeDevIntoMain.yml GitHub Actions'
