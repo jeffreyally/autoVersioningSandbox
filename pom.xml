@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
 
-    <version>2.71-SNAPSHOT</version>
+
 
 
     <modules>
@@ -39,7 +39,7 @@
 
     <!-- This blob of configuration tells Maven to make the jar executable. You can run it with:
     mvn clean package
-    java -jar target/javaparser-maven-sample-1.0-SNAPSHOT-shaded.jar
+    java -jar target/javaparser-maven-sample-1.0-shaded.jar
     -->
     <build>
         <plugins>
