@@ -29,8 +29,8 @@ jobs:
     steps:
     - name: Merge development into master
       run: |
-        git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmp
-        cd tmp
+        git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmpMaster
+        cd tmpMaster
         ls -l
         git config user.name "Automerge Bot"
         git config user.email "bot@example.com"
@@ -48,8 +48,8 @@ jobs:
     
     - name: Merge master into development
       run: |
-        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
-        cd tmp
+        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmpDev
+        cd tmpDev
         ls -l
         git config user.name "Automerge Bot"
         git config user.email "bot@example.com"
