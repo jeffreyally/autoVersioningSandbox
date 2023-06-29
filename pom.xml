@@ -19,9 +19,9 @@
 
 
     <modules>
-        <module>./sandbox/pom1</module>
-         <module>./sandbox/pom2</module>
-         <module>./sandbox/pom3</module>
+        <module>./AAPModel</module>
+         <module>./LaserAWS</module>
+         
     </modules>
 
 
