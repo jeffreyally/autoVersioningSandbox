@@ -56,9 +56,9 @@ jobs:
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
         git branch -a
-        temp=$(grep -P -o -m 1 "\d.\d.*-SNAPSHOT" ./pom.xml | head -1)
+        temp=$(grep -P -o -m 1 "(?<=version\>)[^<]+" ./pom.xml | head -1)
         echo "$temp"
-        find ./ -name "pom.xml" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp%-SNAPSHOT}"/}" {} \;
+        find ./ -name "pom*" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp}-SNAPSHOT"/}" {} \;
         cat pom.xml
         git add .  
         git status
