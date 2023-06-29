@@ -9,7 +9,9 @@
     <!-- The version of this project. SNAPSHOT means "we're still working on it" -->
 
     <packaging>pom</packaging>
+
     <version>2.70</version>
+
 
     <modules>
         <module>./sandbox/pom1</module>
