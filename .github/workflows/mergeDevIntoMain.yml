@@ -27,6 +27,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+          java-version: '8'
+          distribution: 'corretto'
+          cache: maven
+    - name: Java and Maven Version
+      
+      
+      run: java -version && mvn -v
+ 
+      
+      
+      
     - name: Merge development into master
       run: |
         git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmpMaster
@@ -59,6 +73,7 @@ jobs:
         temp=$(grep -P -o -m 1 "(?<=version\>)[^<]+" ./pom.xml | head -1)
         echo "$temp"
         find ./ -name "pom*" -exec sed -i "0,/"$temp"/{s/"$temp"/"${temp}-SNAPSHOT"/}" {} \;
+        mvn --batch-mode release:update-versions
         cat pom.xml
         git add .  
         git status
