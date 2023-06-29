@@ -2,12 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- This is often your domain name (reversed.)  -->
-    <groupId>com.yourorganization</groupId>
-    <!-- The name of this project (actually, the name of the artifact, which is the thing that this project produces. A jar in this case.) -->
+    <parent>
+          
+      <groupId>com.yourorganization</groupId>
+      <artifactId>javaparser-maven-sample</artifactId>
+      <version>2.81-SNAPSHOT</version> 
+    </parent>
+    
     <artifactId>LaserAWS</artifactId>
-    <!-- The version of this project. SNAPSHOT means "we're still working on it" -->
-    <version>2.81-SNAPSHOT</version>
+    
 
     <properties>
         <!-- Tell Maven we want to use Java 8 -->
