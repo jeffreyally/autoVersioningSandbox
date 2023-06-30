@@ -7,11 +7,10 @@
       <groupId>com.yourorganization</groupId>
       <artifactId>javaparser-maven-sample</artifactId>
       <version>2.85-SNAPSHOT</version> 
-         
     </parent>
     
-    <artifactId>AAPModel</artifactId>
-  
+    <artifactId>dir2</artifactId>
+    
 
     <properties>
         <!-- Tell Maven we want to use Java 8 -->

@@ -19,8 +19,8 @@
 
 
     <modules>
-        <module>./AAPModel</module>
-         <module>./LaserAWS</module>
+        <module>./dir1</module>
+         <module>./dir2</module>
          
     </modules>
 

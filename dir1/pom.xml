@@ -7,10 +7,11 @@
       <groupId>com.yourorganization</groupId>
       <artifactId>javaparser-maven-sample</artifactId>
       <version>2.85-SNAPSHOT</version> 
+         
     </parent>
     
-    <artifactId>LaserAWS</artifactId>
-    
+    <artifactId>dir1</artifactId>
+  
 
     <properties>
         <!-- Tell Maven we want to use Java 8 -->
