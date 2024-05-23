@@ -6,7 +6,7 @@
           
       <groupId>com.yourorganization</groupId>
       <artifactId>javaparser-maven-sample</artifactId>
-      <version>2.88-SNAPSHOT</version> 
+      <version>2.88</version> 
          
     </parent>
     
